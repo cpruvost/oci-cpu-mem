@@ -15,7 +15,10 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - run: ls -ali
+      - run: |
+          ls -ali
+          chmod +x ./ociresources.bash'
+          ls -ali
       
       - name: Install OCI CLI
         uses: cpruvost/oci-cli-action@v1.0.3
