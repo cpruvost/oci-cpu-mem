@@ -29,3 +29,8 @@ jobs:
       - run: cat ~/.oci/config
 
       - run: oci -v
+
+      - name: Run OCI Counter Script
+        uses: cpruvost/oci-cpu-mem@master
+        with:
+          region: "${{ secrets.OCI_REGION }}"
