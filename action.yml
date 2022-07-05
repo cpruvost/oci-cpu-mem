@@ -1,28 +1,19 @@
 # hey guys
 
-name: 'oci-cli'
-description: 'Installing oci-cli (Oracle Cloud Infrastructure CLI)'
+name: 'oci-cpu-mem'
+description: 'Count CPU and Memory on OCI'
 author: 'Christophe Pruvost @cpruvost'
 inputs:
-  user:
-    description: 'OCI User'
-    required: true
-  fingerprint:
-    description: 'OCI Fingerprint'
-    required: true
-  tenancy:
-    description: 'OCI Tenancy'
-    required: true
   region:
     description: 'OCI Region'
     required: true
-  api_key:
-    description: 'OCI API Key'
-    required: true
-  cli_version:
-    description: 'OCI CLi Version'
-    required: true  
-    default: master
+outputs:
+  cpu:
+    description: CPU used
+  mem:
+    description: Memory used     
+  nbinst:
+    description: Number of instances  
   
 runs:
   using: 'node12'

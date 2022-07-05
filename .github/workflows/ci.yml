@@ -39,5 +39,11 @@ jobs:
 
       - name: Run OCI Counter Script
         uses: cpruvost/oci-cpu-mem@master
+        id: counter
         with:
           region: "${{ secrets.OCI_REGION }}"
+
+      - run: |
+          echo ${{ steps.counter.outputs.cpu }}     
+          echo ${{ steps.counter.outputs.mem }} 
+          echo ${{ steps.counter.outputs.nbinst }}
