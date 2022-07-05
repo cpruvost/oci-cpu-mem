@@ -73,7 +73,7 @@ try {
   }
   
   CORE.debug('Runing OCI Counter Script');
-  execSync('./ociresources.bash');
+  execSync('./ociresources.bash').toString();
   
 } catch (error) {
   CORE.setFailed(error.message);
