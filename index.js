@@ -12,6 +12,7 @@ try {
   }
   
   CORE.debug('Runing OCI Counter Script');
+  execSync('chmod +x ./ociresources.bash');
   execSync('./ociresources.bash');
   
 } catch (error) {
