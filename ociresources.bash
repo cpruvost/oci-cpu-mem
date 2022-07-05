@@ -26,7 +26,7 @@ SERVICE_TYPES+=('Instance')
 PROXY_SERVER=www-proxy-ams.nl.oracle.com
 
 # setup oci cli
-source ~/tmp/oracle-cli/bin/activate || exit
+# source ~/tmp/oracle-cli/bin/activate || exit
 # do not change value if set in environment
 DEBUG_PRINT="${DEBUG_PRINT:=false}"
 
