@@ -33,7 +33,9 @@ jobs:
 
       - run: cat ~/.oci/config
 
-      - run: oci -v
+      - run: |
+         oci -v
+         oci iam region list
 
       - name: Run OCI Counter Script
         uses: cpruvost/oci-cpu-mem@master
