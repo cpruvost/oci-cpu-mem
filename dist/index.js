@@ -64,7 +64,7 @@ const exec = __webpack_require__(952);
 
 async function run() {
   try {
-    const someInput = core.getInput('region');
+    const someInput = core.getInput('regionscript');
     await exec.exec(`bash ./some-bash-script.bash ${someInput}`);
   } catch (error) {
     core.setFailed(error.message);

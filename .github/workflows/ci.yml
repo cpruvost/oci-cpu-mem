@@ -24,7 +24,14 @@ jobs:
       - name: Install OCI CLI
         uses: cpruvost/oci-cli-action@v1.0.3
         with:
-          region: "eu-marseille-1"
+          user: "${{ secrets.OCI_USER }}"
+          fingerprint: "${{ secrets.OCI_FINGERPRINT }}"
+          tenancy: "${{ secrets.OCI_TENANCY }}"
+          region: "${{ secrets.OCI_REGION }}"
+          api_key: |
+            ${{ secrets.OCI_API_KEY }}
+          cli_version: master  
+          regionscript: "eu-marseille-1"
 
       - run: cat ~/.oci/config
 
