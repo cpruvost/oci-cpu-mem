@@ -15,7 +15,7 @@ REGIONS=()
 for i
 do
  echo $i
- REGIONS+=(`$1`)
+ REGIONS+=$i
 done
 
 #REGIONS=()
