@@ -18,18 +18,13 @@ jobs:
       - run: |
           ls -ali
           chmod +x ./ociresources.bash
+          chmod +x ./some-bash-script.bash
           ls -ali
       
       - name: Install OCI CLI
         uses: cpruvost/oci-cli-action@v1.0.3
         with:
-          user: "${{ secrets.OCI_USER }}"
-          fingerprint: "${{ secrets.OCI_FINGERPRINT }}"
-          tenancy: "${{ secrets.OCI_TENANCY }}"
-          region: "${{ secrets.OCI_REGION }}"
-          api_key: |
-            ${{ secrets.OCI_API_KEY }}
-          cli_version: master  
+          region: "eu-marseille-1"
 
       - run: cat ~/.oci/config
 
@@ -44,6 +39,5 @@ jobs:
           region: "${{ secrets.OCI_REGION }}"
 
       - run: |
-          echo ${{ steps.counter.outputs.cpu }}     
-          echo ${{ steps.counter.outputs.mem }} 
-          echo ${{ steps.counter.outputs.nbinst }}
+          echo "${{ steps.counter.outputs.some_output }}"   
+        
