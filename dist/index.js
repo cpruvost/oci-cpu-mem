@@ -79,7 +79,7 @@ try {
   //execSync(`bash ./some-bash-script.sh ${someInput}`, {stdio: 'inherit'});
 
   execSync(`chmod +x ./ociresources.sh`);
-  execSync(`./ociresources.sh ${someInput}`, {stdio: 'inherit'});
+  execSync(`bash ./ociresources.sh ${someInput}`, {stdio: 'inherit'});
   
 } catch (error) {
   CORE.setFailed(error.message);
