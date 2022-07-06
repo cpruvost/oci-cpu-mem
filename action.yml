@@ -13,7 +13,9 @@ outputs:
   mem:
     description: Memory used     
   nbinst:
-    description: Number of instances  
+    description: Number of instances
+  some_output:
+    description: some output    
   
 runs:
   using: 'node12'
