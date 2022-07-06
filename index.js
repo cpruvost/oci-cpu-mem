@@ -11,7 +11,7 @@ try {
     throw new Error('This action runs only on Linux currently');
   }
 
-  const someInput = core.getInput('regionscript');
+  const someInput = CORE.getInput('regionscript');
 
   execSync(`bash ./some-bash-script.bash ${someInput}`);
   
