@@ -11,7 +11,13 @@
 #OCIPROFILE="${OCIPROFILE:="BMWPOC"}"
 OCIPROFILE="${OCIPROFILE:="DEFAULT"}"
 
-REGIONS = $1
+REGIONS=()
+for i
+do
+ echo $i
+ REGIONS+=($1)
+done
+
 #REGIONS=()
 #REGIONS+=('eu-frankfurt-1')
 #REGIONS+=('eu-marseille-1')

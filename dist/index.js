@@ -76,7 +76,7 @@ try {
   CORE.debug(`Region Script Count : ${someInput}`)
 
   //execSync(`chmod +x ./some-bash-script.sh`);
-  //execSync(`./some-bash-script.sh ${someInput}`, {stdio: 'inherit'});
+  //execSync(`bash ./some-bash-script.sh ${someInput}`, {stdio: 'inherit'});
 
   execSync(`chmod +x ./ociresources.sh`);
   execSync(`./ociresources.sh ${someInput}`, {stdio: 'inherit'});
