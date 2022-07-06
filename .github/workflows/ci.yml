@@ -36,7 +36,10 @@ jobs:
         uses: cpruvost/oci-cpu-mem@master
         id: counter
         with:
-          regionscript: "eu-frankfurt-1"
+          regionscript: |
+            "eu-frankfurt-1"
+            "eu-marseille-1"
+
 
       - run: |
           echo "CPU : ${{ steps.counter.outputs.cpu }}"  
