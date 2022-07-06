@@ -4,8 +4,8 @@ name: 'oci-cpu-mem'
 description: 'Count CPU and Memory on OCI'
 author: 'Christophe Pruvost @cpruvost'
 inputs:
-  region:
-    description: 'OCI Region'
+  regionscript:
+    description: 'OCI Region to count'
     required: true
 outputs:
   cpu:
