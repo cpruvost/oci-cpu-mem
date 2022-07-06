@@ -30,7 +30,6 @@ jobs:
           api_key: |
             ${{ secrets.OCI_API_KEY }}
           cli_version: master  
-          regionscript: "eu-marseille-1"
 
       - run: cat ~/.oci/config
 
@@ -42,7 +41,7 @@ jobs:
         uses: cpruvost/oci-cpu-mem@master
         id: counter
         with:
-          regionscript: "${{ secrets.OCI_REGION }}"
+          regionscript: "eu-marseille-1"
 
       - run: |
           echo "${{ steps.counter.outputs.some_output }}"   
