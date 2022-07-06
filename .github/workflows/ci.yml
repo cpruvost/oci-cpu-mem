@@ -14,11 +14,6 @@ jobs:
     steps:
 
       - uses: actions/checkout@v3
-
-      - run: |
-          ls -ali
-          chmod +x ./ociresources.bash
-          ls -ali
       
       - name: Install OCI CLI
         uses: cpruvost/oci-cli-action@v1.0.3
@@ -41,7 +36,7 @@ jobs:
         uses: cpruvost/oci-cpu-mem@master
         id: counter
         with:
-          regionscript: "eu-marseille-1"
+          regionscript: "eu-frankfurt-1"
 
       - run: |
           echo "${{ steps.counter.outputs.some_output }}"   

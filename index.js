@@ -15,7 +15,9 @@ try {
   CORE.debug(`Region Script Count : ${someInput}`)
 
   execSync(`chmod +x ./some-bash-script.sh`);
-  execSync(`./some-bash-script.sh ${someInput}`);
+  execSync(`./some-bash-script.sh ${someInput}`, {
+    stdio: ['inherit', 'inherit', 'inherit']
+  });
   
 } catch (error) {
   CORE.setFailed(error.message);
