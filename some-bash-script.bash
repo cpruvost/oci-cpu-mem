@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-echo `::set-output name=some_output::$1`
+echo "::set-output name=some_output::$1"
