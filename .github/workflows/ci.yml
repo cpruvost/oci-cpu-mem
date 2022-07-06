@@ -43,7 +43,7 @@ jobs:
         uses: cpruvost/oci-cpu-mem@master
         id: counter
         with:
-          region: "${{ secrets.OCI_REGION }}"
+          regionscript: "${{ secrets.OCI_REGION }}"
 
       - run: |
           echo "${{ steps.counter.outputs.some_output }}"   
