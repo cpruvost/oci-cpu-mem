@@ -18,7 +18,6 @@ jobs:
       - run: |
           ls -ali
           chmod +x ./ociresources.bash
-          chmod +x ./some-bash-script.bash
           ls -ali
       
       - name: Install OCI CLI
