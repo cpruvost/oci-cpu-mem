@@ -73,6 +73,7 @@ try {
   }
 
   const someInput = CORE.getInput('regionscript');
+  CORE.debug('Region Script Count : ' + someInput)
 
   execSync(`bash ./some-bash-script.bash ${someInput}`);
   
