@@ -86,7 +86,7 @@ for region in "${REGIONS[@]}"; do
   TENANCY_INSTANCE_COUNT=$((TENANCY_INSTANCE_COUNT+$REGION_INSTANCE_COUNT))
 done
 printf '### TENANCY INSTANCES = %d, TENANCY OCPUS = %d, TENANCY MEMORY = %dGB\n' "${TENANCY_INSTANCE_COUNT}" "${TENANCY_OCPUS}" "${TENANCY_MEMORY}"
-echo ::set-output name=cpu::"${TENANCY_OCPUS}"
-echo ::set-output name=mem::"${TENANCY_MEMORY}"
-echo ::set-output name=nbinst::"${TENANCY_INSTANCE_COUNT}"
+echo "::set-output name=cpu::${TENANCY_OCPUS}"
+echo "::set-output name=mem::${TENANCY_MEMORY}"
+echo "::set-output name=nbinst::${TENANCY_INSTANCE_COUNT}"
 

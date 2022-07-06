@@ -8,8 +8,14 @@ inputs:
     description: 'OCI Region to count'
     required: true
 outputs:
-  some_output:
-    description: some output    
+  cpu:
+    description: Number of CPU 
+  mem:
+    description: Memory Used
+  nbinst:
+    description: number of instances      
+  #some_output:
+    #description: some output    
   
 runs:
   using: 'node12'

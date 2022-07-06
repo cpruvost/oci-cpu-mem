@@ -39,5 +39,8 @@ jobs:
           regionscript: "eu-frankfurt-1"
 
       - run: |
-          echo "${{ steps.counter.outputs.some_output }}"   
+          echo "CPU : ${{ steps.counter.outputs.cpu }}"  
+          echo "MEM : ${{ steps.counter.outputs.mem }}"    
+          echo "NBINSY : ${{ steps.counter.outputs.nbinst }}"  
+         
         
