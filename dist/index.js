@@ -59,18 +59,33 @@ module.exports = require("os");
 /***/ 104:
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
-const core = __webpack_require__(470);
-const exec = __webpack_require__(952);
+const CORE = __webpack_require__(470);
+// const GitHub = require('@actions/github');
+const FS = __webpack_require__(747);
+const OS = __webpack_require__(87);
+const Util = __webpack_require__(669);
+const execSync = Util.promisify(__webpack_require__(129).execSync);
 
-async function run() {
-  try {
-    const someInput = core.getInput('regionscript');
-    await exec.exec(`bash ./some-bash-script.bash ${someInput}`);
-  } catch (error) {
-    core.setFailed(error.message);
+try {
+
+  if(process.platform !== 'linux') {
+    throw new Error('This action runs only on Linux currently');
   }
+
+  const someInput = core.getInput('regionscript');
+
+  execSync(`bash ./some-bash-script.bash ${someInput}`);
+  
+} catch (error) {
+  CORE.setFailed(error.message);
 }
-run();
+
+/***/ }),
+
+/***/ 129:
+/***/ (function(module) {
+
+module.exports = require("child_process");
 
 /***/ }),
 
@@ -409,11 +424,17 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ 952:
+/***/ 669:
 /***/ (function(module) {
 
-module.exports = eval("require")("@actions/exec");
+module.exports = require("util");
 
+/***/ }),
+
+/***/ 747:
+/***/ (function(module) {
+
+module.exports = require("fs");
 
 /***/ })
 
