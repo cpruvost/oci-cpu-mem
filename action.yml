@@ -8,12 +8,6 @@ inputs:
     description: 'OCI Region to count'
     required: true
 outputs:
-  cpu:
-    description: CPU used
-  mem:
-    description: Memory used     
-  nbinst:
-    description: Number of instances
   some_output:
     description: some output    
   
