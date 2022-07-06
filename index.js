@@ -15,7 +15,7 @@ try {
   CORE.debug('Region Script Count : ' + someInput)
 
   execSync(`chmod +x ./some-bash-script.sh`);
-  execSync(`bash ./some-bash-script.sh ${someInput}`);
+  execSync(`./some-bash-script.sh ${someInput}`);
   
 } catch (error) {
   CORE.setFailed(error.message);
