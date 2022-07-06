@@ -75,7 +75,7 @@ try {
   const someInput = CORE.getInput('regionscript');
   CORE.debug('Region Script Count : ' + someInput)
 
-  execSync(`sh ls -ali`);
+  execSync(`ls -ali`);
   execSync(`bash ./some-bash-script.sh ${someInput}`);
   
 } catch (error) {
