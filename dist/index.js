@@ -76,8 +76,7 @@ try {
   CORE.debug(`Region Script Count : ${someInput}`)
 
   execSync(`chmod +x ./some-bash-script.sh`);
-  var result = execSync(`./some-bash-script.sh ${someInput}`).toString();
-  console.log(result);
+  execSync(`./some-bash-script.sh ${someInput}`, {stdio: 'inherit'});
   
 } catch (error) {
   CORE.setFailed(error.message);
