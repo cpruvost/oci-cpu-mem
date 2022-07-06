@@ -59,33 +59,18 @@ module.exports = require("os");
 /***/ 104:
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
-const CORE = __webpack_require__(470);
-// const GitHub = require('@actions/github');
-const FS = __webpack_require__(747);
-const OS = __webpack_require__(87);
-const Util = __webpack_require__(669);
-const execSync = Util.promisify(__webpack_require__(129).execSync);
+const core = __webpack_require__(470);
+const exec = __webpack_require__(952);
 
-try {
-
-  if(process.platform !== 'linux') {
-    throw new Error('This action runs only on Linux currently');
+async function run() {
+  try {
+    const someInput = core.getInput('region');
+    await exec.exec(`bash ./some-bash-script.bash ${someInput}`);
+  } catch (error) {
+    core.setFailed(error.message);
   }
-  
-  CORE.debug('Runing OCI Counter Script');
-  const output = execSync('./ociresources.bash');
-  console.log(output);
-  
-} catch (error) {
-  CORE.setFailed(error.message);
 }
-
-/***/ }),
-
-/***/ 129:
-/***/ (function(module) {
-
-module.exports = require("child_process");
+run();
 
 /***/ }),
 
@@ -424,17 +409,11 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ 669:
+/***/ 952:
 /***/ (function(module) {
 
-module.exports = require("util");
+module.exports = eval("require")("@actions/exec");
 
-/***/ }),
-
-/***/ 747:
-/***/ (function(module) {
-
-module.exports = require("fs");
 
 /***/ })
 
