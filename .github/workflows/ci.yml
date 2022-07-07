@@ -37,8 +37,8 @@ jobs:
         id: counter
         with:
           regionscript: |
-            "eu-marseille-1"
-            "eu-frankfurt-1"
+            eu-marseille-1
+            eu-frankfurt-1
           mode: ocicli 
         
       - run: |
