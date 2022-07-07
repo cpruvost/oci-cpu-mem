@@ -11,7 +11,7 @@
 #OCIPROFILE="${OCIPROFILE:="BMWPOC"}"
 OCIPROFILE="${OCIPROFILE:="DEFAULT"}"
 
-if [ $# -ne 1 ]; then
+if [ $# -lt 1 ]; then
   echo "illegal number of parameters"
   exit
 fi
