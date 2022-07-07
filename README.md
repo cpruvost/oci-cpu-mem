@@ -1,6 +1,6 @@
-# Github Action (Javascript) for Oracle Cloud Infrastructure CLI
+# Github Action CPU and Memory Counter for Oracle Cloud Infrastructure CLI
 
-With Github Action for Oracle Cloud Infrastructure CLI, you can automate your workflow by executing OCI CLI commands to manage OCI resources inside of an Action.
+With Github Action CPU And Memory Counter for Oracle Cloud Infrastructure CLI, you can automate your workflow by executing OCI CLI commands to manage OCI resources inside of an Action.
 
 ## Inputs
 
