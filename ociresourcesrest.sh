@@ -62,6 +62,7 @@ user_ocid="ocid1.user.oc1..aaaaaaaae4iep5wzdfqboxws6mlubt4rssygmmu7oek6qq2di7lgy
 
 # path to the private PEM format key for this user
 privateKeyPath="/home/runner/.oci/api_key.pem"
+#privateKeyPath="/mnt/c/Travail/Travail2019/Demos/InfraAsCode/DevOpsDb/SshKeys/APIKeys/bmcs_api_key.pem"
 
 # fingerprint of the private key for this user
 fingerprint="4f:90:09:d7:2a:ea:81:a8:76:97:2a:51:9c:e9:36:03"
