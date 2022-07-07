@@ -37,8 +37,8 @@ The number of instances. Ex : `9`.
             eu-frankfurt-1
           mode: rest  
         
-      - run: |
-          echo "CPU : ${{ steps.counter.outputs.cpu }}"  
-          echo "MEM : ${{ steps.counter.outputs.mem }}"    
-          echo "NBINST : ${{ steps.counter.outputs.nbinst }}"  
+- run: |
+    echo "CPU : ${{ steps.counter.outputs.cpu }}"  
+    echo "MEM : ${{ steps.counter.outputs.mem }}"    
+    echo "NBINST : ${{ steps.counter.outputs.nbinst }}"  
 ```
