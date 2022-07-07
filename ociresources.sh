@@ -17,9 +17,9 @@ OCIPROFILE="${OCIPROFILE:="DEFAULT"}"
 #fi
 
 REGIONS=()
-REGIONS+=($1)
+#REGIONS+=($1)
 #REGIONS+=('eu-frankfurt-1')
-#REGIONS+=('eu-marseille-1')
+REGIONS+=('eu-marseille-1')
 #REGIONS+=('eu-amsterdam-1')
 #REGIONS+=('af-johannesburg-1')
 
