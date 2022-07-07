@@ -20,7 +20,7 @@ try {
   //execSync(`chmod +x ./some-bash-script.sh`);
   //execSync(`bash ./some-bash-script.sh ${someInput}`, {stdio: 'inherit'});
 
-  if (mode.trim() == "ocili")
+  if (mode.trim() === "ocili")
   {
     execSync(`chmod +x ./ociresources.sh`);
     execSync(`bash ./ociresources.sh ${someInput}`, {stdio: 'inherit'});
