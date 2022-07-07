@@ -11,13 +11,13 @@
 #OCIPROFILE="${OCIPROFILE:="BMWPOC"}"
 OCIPROFILE="${OCIPROFILE:="DEFAULT"}"
 
-#if [ $# -ne 1 ]; then
- # echo "illegal number of parameters"
-  #exit
-#fi
+if [ $# -ne 1 ]; then
+  echo "illegal number of parameters"
+  exit
+fi
 
 REGIONS=()
-#REGIONS+=($1)
+REGIONS+=($*)
 #REGIONS+=('eu-frankfurt-1')
 REGIONS+=('eu-marseille-1')
 #REGIONS+=('eu-amsterdam-1')
