@@ -7,6 +7,9 @@ With Github Action CPU And Memory Counter for Oracle Cloud Infrastructure CLI, y
 ### `regionscript`
 
 **Required** The region list to count. Ex `"eu-marseille-1"`.
+### `mode`
+
+**Required** The mode used to count. OCI CLI or REST. Ex `"ocicli"`. Note : if not ocicli then it is rest by default.
 
 ## Outputs
 

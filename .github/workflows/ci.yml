@@ -39,7 +39,7 @@ jobs:
           regionscript: |
             "eu-marseille-1"
             "eu-frankfurt-1"
-          mode: ocicli  
+          mode: rest 
         
       - run: |
           echo "CPU : ${{ steps.counter.outputs.cpu }}"  
