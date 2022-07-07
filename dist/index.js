@@ -84,12 +84,14 @@ try {
   if (mode.trim() === "ocicli")
   {
     execSync(`chmod +x ./ociresources.sh`);
-    execSync(`bash ./ociresources.sh ${someInput}`, {stdio: 'inherit'});
+    //execSync(`bash ./ociresources.sh ${someInput}`, {stdio: 'inherit'});
+    execSync(`bash ./ociresources.sh`, {stdio: 'inherit'});
   }  
   else
   {
     execSync(`chmod +x ./ociresourcesrest.sh`);
-    execSync(`bash ./ociresourcesrest.sh ${someInput}`, {stdio: 'inherit'});
+    //execSync(`bash ./ociresourcesrest.sh ${someInput}`, {stdio: 'inherit'});
+    execSync(`bash ./ociresourcesrest.sh`, {stdio: 'inherit'});
   }
 
   
