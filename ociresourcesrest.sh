@@ -14,9 +14,10 @@ LC_MEASUREMENT="en_US.UTF-8"
 
 ####################################################################################
 REGIONS=()
-REGIONS+=('eu-frankfurt-1')
-REGIONS+=('eu-amsterdam-1')
-REGIONS+=('af-johannesburg-1')
+REGIONS+=('eu-marseille-1')
+#REGIONS+=('eu-frankfurt-1')
+#REGIONS+=('eu-amsterdam-1')
+#REGIONS+=('af-johannesburg-1')
 #REGIONS+=('eu-amsterdam-1')
 #REGIONS+=('eu-stockholm-1')
 #REGIONS+=('me-abudhabi-1')
@@ -36,7 +37,6 @@ REGIONS+=('af-johannesburg-1')
 #REGIONS+=('eu-milan-1')
 #REGIONS+=('eu-madrid-1')
 #REGIONS+=('ap-melbourne-1')
-#REGIONS+=('eu-marseille-1')
 #REGIONS+=('il-jerusalem-1')
 #REGIONS+=('ap-tokyo-1')
 #REGIONS+=('us-phoenix-1')
@@ -55,16 +55,16 @@ SERVICE_TYPES=()
 SERVICE_TYPES+=('Instance')
 ########################## Fill these in with your values ##########################
 #OCID of the tenancy calls are being made in to
-tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaabh2affulc4dt4tqs7lbojyhqi6hzn5mjllxlnuqnletufsofoyvq"
+tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaahrs4avamaxiscouyeoirc7hz5byvumwyvjedslpsdb2d2xe2kp2q"
 
 # OCID of the user making the rest call
-user_ocid="ocid1.user.oc1..aaaaaaaa2nj3yzywvuufxslekdgtelc2pdwphelwsuf6rklioy566r4bidwa"
+user_ocid="ocid1.user.oc1..aaaaaaaae4iep5wzdfqboxws6mlubt4rssygmmu7oek6qq2di7lgyzlqk5sq"
 
 # path to the private PEM format key for this user
-privateKeyPath="/Users/lange/.oci/oci_api_key.pem"
+privateKeyPath="/home/runner/.oci/api_key.pem"
 
 # fingerprint of the private key for this user
-fingerprint="79:5e:63:76:4a:ee:3f:bc:09:f4:0c:fb:ae:93:b2:fa"
+fingerprint="4f:90:09:d7:2a:ea:81:a8:76:97:2a:51:9c:e9:36:03"
 
 ####################################################################################
 INSTANCE_TOTAL=0
@@ -145,3 +145,6 @@ for region in "${REGIONS[@]}"; do
   MEM_TOTAL=$((MEM_TOTAL+$REGION_MEM))
 done
 printf '### TENANCY INSTANCES = %d, TENANCY OCPUS = %d, TENANCY MEMORY = %dGB\n' "${INSTANCE_TOTAL}" "${OCPU_TOTAL}" "${MEM_TOTAL}"
+echo "::set-output name=cpu::${OCPU_TOTAL}"
+echo "::set-output name=mem::${MEM_TOTAL}"
+echo "::set-output name=nbinst::${INSTANCE_TOTAL}"

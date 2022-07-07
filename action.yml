@@ -2,11 +2,14 @@
 
 name: 'oci-cpu-mem'
 description: 'Count CPU and Memory on OCI'
-author: 'Christophe Pruvost @cpruvost'
+author: 'Christophe Pruvost @cpruvost / Ralf Lang @hoehenunterschied'
 inputs:
   regionscript:
     description: 'OCI Region to count'
     required: true
+  mode:
+    description: 'OCI CLI (use ocicli) or REST (rest). if not ocicli then rest is used'
+    required: true  
 outputs:
   cpu:
     description: Number of CPU 

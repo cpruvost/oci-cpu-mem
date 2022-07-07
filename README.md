@@ -1,40 +1,40 @@
 # Github Action CPU and Memory Counter for Oracle Cloud Infrastructure CLI
 
-With Github Action CPU And Memory Counter for Oracle Cloud Infrastructure CLI, you can automate your workflow by executing OCI CLI commands to manage OCI resources inside of an Action.
+With Github Action CPU And Memory Counter for Oracle Cloud Infrastructure CLI, you can automate your workflow by executing OCI CLI commands to count OCI resources inside of an Action. Note : This list of regions to count is not used for the moment and is hard coded in the script sh file.  
 
 ## Inputs
 
-### `user`
+### `regionscript`
 
-**Required** The oci id of the user. Ex `"ocid1.user.oc1..aaaaaaaaxxx........."`.
+**Required** The region list to count. Ex `"eu-marseille-1"`.
 
-### `fingerprint`
+## Outputs
 
-**Required** The fingerprint of API key. Ex `"4f:90:09:d7:2a:ea:81........."`.
-### `tenancy`
+### `cpu`
 
-**Required** The tenancy id of OCI. Ex `"ocid1.tenancy.oc1..aaaaaaaahrs4avamaxiscouye........"`.
-### `region`
+The number of CPU. Ex : `12`.
+### `mem`
 
-**Required** The region id of OCI. Ex `"eu-frankfurt-1"`.
-### `api_key`
+The Memory used in GB. Ex : `180`.
+### `nbinst`
 
-**Required** The api_key to access OCI. Ex `"-----BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEAyCt82bSAeSWBtwK1razNApgDVvpVD1IfHUti+0n9X2ZTYb9k........"`.
-### `version`
-
-**Required** The OCI CLI version. Ex `"master for last version, v3.10.5, v2.23.0, ...Note : default = master. For the moment whatever the version you choose at the end you will have the last version. I am investigating on that but not sure there is a solution"`.
+The number of instances. Ex : `9`.
+## Dependencies on other GitHub Actions
+- Checkout – To execute the scripts present in your repository
+- oci-cli-action - To install Oracle Cloud InfraStructure CLI (OCI CLI)
 
 # Example usage
 ```yaml
-- name: Install oci-cli
-  uses: cpruvost/oci-cli-action@v1.0.3
-  with:
-    user: "${{ secrets.OCI_USER }}"
-    fingerprint: "${{ secrets.OCI_FINGERPRINT }}"
-    tenancy: "${{ secrets.OCI_TENANCY }}"
-    region: "${{ secrets.OCI_REGION }}"
-    api_key: |
-      ${{ secrets.OCI_API_KEY }}
-    version: master  
+- name: Run OCI Counter Script
+        uses: cpruvost/oci-cpu-mem@master
+        id: counter
+        with:
+          regionscript: |
+            "eu-marseille-1"
+            "eu-frankfurt-1"
+        
+      - run: |
+          echo "CPU : ${{ steps.counter.outputs.cpu }}"  
+          echo "MEM : ${{ steps.counter.outputs.mem }}"    
+          echo "NBINST : ${{ steps.counter.outputs.nbinst }}"  
 ```

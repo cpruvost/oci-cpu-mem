@@ -74,12 +74,24 @@ try {
 
   const someInput = CORE.getInput('regionscript');
   CORE.debug(`Region Script Count : ${someInput}`)
+  const mode = CORE.getInput('mode');
+  CORE.debug(`Mode : ${mode}`)
 
+  //Test with a simple script
   //execSync(`chmod +x ./some-bash-script.sh`);
   //execSync(`bash ./some-bash-script.sh ${someInput}`, {stdio: 'inherit'});
 
-  execSync(`chmod +x ./ociresources.sh`);
-  execSync(`bash ./ociresources.sh ${someInput}`, {stdio: 'inherit'});
+  if (mode.trim() == "ocili")
+  {
+    execSync(`chmod +x ./ociresources.sh`);
+    execSync(`bash ./ociresources.sh ${someInput}`, {stdio: 'inherit'});
+  }  
+  else
+  {
+    execSync(`chmod +x ./ociresourcesrest.sh`);
+    execSync(`bash ./ociresourcesrest.sh ${someInput}`, {stdio: 'inherit'});
+  }
+
   
 } catch (error) {
   CORE.setFailed(error.message);
