@@ -33,8 +33,9 @@ The number of instances. Ex : `9`.
         id: counter
         with:
           regionscript: |
-            "eu-marseille-1"
-            "eu-frankfurt-1"
+            eu-marseille-1
+            eu-frankfurt-1
+          mode: rest  
         
       - run: |
           echo "CPU : ${{ steps.counter.outputs.cpu }}"  
